@@ -119,5 +119,17 @@ function terbilang(angka) {
 }
 
 function prima(bilangan) {
-    
+    let hasil = "BUKAN PRIMA";
+    let modulus = 0;
+    for (let i = 1; i <= bilangan; i++) {
+            if (bilangan%i == 0) {
+                modulus++;
+        }
+    }
+    if (modulus == 2) {
+        hasil = "PRIMA";
+    }
+    console.log(hasil);
 }
+
+prima(67);
