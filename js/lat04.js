@@ -115,8 +115,63 @@ lulus(100);
 
 
 function terbilang(angka) {
+
+    var tulisan = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas"];
+    var hasil = "Milliaran!";
+    var bagi = 0;
+    angka = Math.abs(angka);
+
+    if (angka < 12) {
+        hasil = " " + tulisan[angka];
+    } 
     
+    else if (angka < 20) {
+        hasil = terbilang(angka - 10 ) + " Belas";
+    } 
+    
+    else if (angka < 100) {
+        bagi = Math.floor(angka / 10);
+        hasil = terbilang(bagi) + " Puluh" + terbilang(angka % 10);
+    } 
+    
+    else if (angka < 200) {
+        hasil = " Seratus" + terbilang(angka - 100);
+    }
+
+    else if (angka < 1000) {
+        bagi = Math.floor(angka / 100);
+        hasil = terbilang(bagi) + " Ratus" + terbilang(angka % 100);
+    }
+
+    else if (angka < 2000) {
+        hasil = " Seribu" + terbilang(angka - 1000);
+    }
+
+    else if (angka < 1000000) {
+        bagi = Math.floor(angka / 1000);
+        hasil = terbilang(bagi) + " Ribu" + terbilang(angka % 1000);
+    }
+
+    else if (angka < 1000000000) {
+        bagi = Math.floor(angka / 1000000);
+        hasil = terbilang(bagi) + " Juta" + terbilang(angka % 1000000);
+    }
+
+    else if (angka < 1000000000000) {
+        bagi = Math.floor(angka / 1000000000);
+        hasil = terbilang(bagi) + " Milliar" + terbilang(angka % 1000000000);
+    }
+
+    else {
+        hasil;
+    }
+
+    return hasil;
 }
+
+console.log(terbilang(13579))
+
+
 
 function prima(bilangan) {
     let hasil = "BUKAN PRIMA";
