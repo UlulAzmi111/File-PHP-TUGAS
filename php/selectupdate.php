@@ -1,6 +1,6 @@
 <?php 
 
-    require_once "../koneksi.php";
+    require_once "koneksi.php";
 
     $data = stripslashes(file_get_contents("php://input"));
     $idpelanggan = json_decode($data, true);

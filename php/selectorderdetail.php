@@ -1,10 +1,10 @@
 <?php 
 
-    require_once "../koneksi.php";
+    require_once "koneksi.php";
 
     $sql = "SELECT * FROM tblorderdetail";
 
-    $result = mysqli_query($koneksi, $sql);
+    $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         $data = array();

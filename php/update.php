@@ -1,14 +1,14 @@
 <?php 
 
-    require_once "../koneksi.php";
+    require_once "koneksi.php";
 
     $data = stripslashes(file_get_contents("php://input"));
-    $dataPelanggan = json_decode($data, true);
+    $datapelanggan = json_decode($data, true);
 
-    $idpelanggan = $dataPelanggan['idpelanggan'];
-    $pelanggan = $dataPelanggan['pelanggan'];
-    $alamat = $dataPelanggan['alamat'];
-    $telp = $dataPelanggan['telp'];
+    $idpelanggan = $datapelanggan['idpelanggan'];
+    $pelanggan = $datapelanggan['pelanggan'];
+    $alamat = $datapelanggan['alamat'];
+    $telp = $datapelanggan['telp'];
 
 
     if (!empty($pelanggan) and !empty($alamat) and !empty($telp)) {
@@ -16,7 +16,7 @@
     $sql = "UPDATE tblpelanggan 
     SET pelanggan = '$pelanggan',
     alamat = '$alamat',
-    telp = '$telp',
+    telp = '$telp'
     WHERE idpelanggan = $idpelanggan";
     
 

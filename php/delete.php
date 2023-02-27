@@ -1,6 +1,6 @@
 <?php 
 
-    require_once "../koneksi.php";
+    require_once "koneksi.php";
 
     $data = stripslashes(file_get_contents("php://input"));
     $idpelanggan = json_decode($data, true);
@@ -10,16 +10,17 @@
 
     if (!empty($idpelanggan)) {
 
-    $sql = "DELETE FROM tblpelanggan WHERE idpelanggan = $idpelanggan";
-    
-    if ($result = mysqli_query($con, $sql)) {
-        echo "Data sudah dihapus !";
+        $sql = "DELETE FROM tblpelanggan WHERE idpelanggan = $idpelanggan";
+        
+        if ($result = mysqli_query($con, $sql)) {
+            echo "Data sudah dihapus !";
+        } else {
+            echo "Data gagal dihapus !";
+        }
+        
     } else {
-        echo "Data gagal dihapus !";
+            echo "Data belum dipilih !";
     }
-} else {
-    echo "Data belum dipilih !";
-}
     
 
 ?>
